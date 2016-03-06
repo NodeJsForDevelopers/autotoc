@@ -1,0 +1,16 @@
+{
+  "name": "autotoc",
+  "version": "0.0.1",
+  "description": "HTML sitemap generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hgcummings <npmjs@hgc.io> (http://hgc.io/)",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "superagent": "^1.8.0-beta.2",
+    "superagent-promise-plugin": "^2.1.0"
+  }
+}
