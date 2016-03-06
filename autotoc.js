@@ -1,13 +1,20 @@
 (function (root, factory) {
     'use strict';
     if (typeof define === 'function' && define.amd) {
-        define(['superagent', 'jQuery'], factory);
+        define('jquery-detached', ['jquery'], function($) {
+            return html => {
+                let jqObj = $($.parseHTML(html));
+                return jqObj.find.bind(jqObj);
+            }
+        });
+        
+        define(['superagent', 'urijs/URI', 'jquery-detached'], factory);
     } else if (typeof module === 'object' && module.exports) {
-        module.exports = factory(require('superagent'), require('cheerio').load, require('url').resolve);
+        module.exports = factory(require('superagent'), require('urijs'), require('cheerio').load);
     } else {
         root.returnExports = factory(root.b);
     }
-}(this, function factory(superagent, loadHtml, resolveUrl) {
+}(this, function factory(superagent, URI, loadHtml) {
     'use strict';
     
     function getHtml(url) {
@@ -36,7 +43,7 @@
                     $('a').each((i, elem) => {
                         let name = $(elem).text(), url = $(elem).attr('href');
                         if (name && url) {
-                            let absoluteUrl = resolveUrl(this.url, url);
+                            let absoluteUrl = new URI(url).absoluteTo(this.url).toString();
                             if (absoluteUrl.indexOf(this.url) === 0 && absoluteUrl !== this.url && absoluteUrl != this.url + '/') {
                                 let childNode = new Node(name.trim(), absoluteUrl);
                                 if (absoluteUrl.indexOf('#') === -1) {

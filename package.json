@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "cheerio": "^0.20.0",
-    "superagent": "^1.8.0-beta.2",
-    "superagent-promise-plugin": "^2.1.0"
+    "superagent": "~1.2.0",
+    "urijs": "^1.17.1"
   }
 }
