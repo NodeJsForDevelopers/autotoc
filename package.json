@@ -1,8 +1,11 @@
 {
   "name": "autotoc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "HTML sitemap generator",
   "main": "index.js",
+  "bin": {
+    "autotoc": "./cli.js"
+  },
   "author": "hgcummings <npmjs@hgc.io> (http://hgc.io/)",
   "repository": "https://github.com/hgcummings/autotoc",
   "license": "MIT",
