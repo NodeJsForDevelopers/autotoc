@@ -2,12 +2,12 @@
 
 let autotoc = require('./autotoc.js');
 autotoc('http://hgc.io').then(toc => {
-    let printNode = function(node, indent) {
-        console.log(`${indent} - ${node.name} (${node.url})`);
-        node.children.forEach(childNode => {
-            printNode(childNode, indent + '  ');
+    let printEntry = function(entry, indent) {
+        console.log(`${indent} - ${entry.name} (${entry.url})`);
+        entry.children.forEach(childEntry => {
+            printEntry(childEntry, indent + '  ');
         })
     }
     
-    printNode(toc, '');
+    printEntry(toc, '');
 }, err => console.log(err));
