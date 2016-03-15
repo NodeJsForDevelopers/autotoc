@@ -1,6 +1,5 @@
 'use strict';
 
-const autotoc = require('./autotoc.js');
-const consolePrinter = require('./consolePrinter.js');
+const autotoc = require('.');
 
-autotoc('http://hgc.io').then(consolePrinter, err => console.log(err));
+autotoc('http://hgc.io').then(autotoc.consolePrinter, err => console.log(err));
