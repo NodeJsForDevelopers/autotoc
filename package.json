@@ -1,7 +1,7 @@
 {
   "name": "autotoc",
   "version": "0.0.3",
-  "description": "HTML sitemap generator",
+  "description": "Automatic table of contents generator for websites",
   "main": "index.js",
   "bin": {
     "autotoc": "./cli.js"
