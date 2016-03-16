@@ -17,7 +17,8 @@ class Page {
         let $ = cheerio.load(response.body);
         let promiseChildren = [];
         $('a').each((i, elem) => {
-          let name = $(elem).text(), childUrl = $(elem).attr('href');
+          let name = $(elem).contents().get(0).nodeValue;
+          let childUrl = $(elem).attr('href');
           if (name && childUrl && childUrl !== '/') {
             let absoluteUrl = url.resolve(this.url, childUrl);
             if (absoluteUrl.indexOf(this.url) === 0 && absoluteUrl !== this.url) {
