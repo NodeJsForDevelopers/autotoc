@@ -1,6 +1,6 @@
 {
   "name": "autotoc",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Automatic table of contents generator for websites",
   "main": "index.js",
   "bin": {
