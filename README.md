@@ -5,11 +5,15 @@ Simple web-scraping and module packaging demo. Generates a table of contents by 
 ### As a command line tool
 
 ```
-npm install autotoc
+npm install -g autotoc
 autotoc http://hgc.io
 ```
 
 ### As a library
+
+```
+npm install autotoc --save
+```
 
 ```
 const autotoc = require('autotoc');
