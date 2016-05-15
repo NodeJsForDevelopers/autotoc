@@ -7,7 +7,7 @@
     "autotoc": "./cli.js"
   },
   "author": "hgcummings <npmjs@hgc.io> (http://hgc.io/)",
-  "repository": "https://github.com/hgcummings/autotoc",
+  "repository": "https://github.com/NodeJsForDevelopers/autotoc",
   "license": "MIT",
   "dependencies": {
     "cheerio": "^0.20.0",
